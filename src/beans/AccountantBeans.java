@@ -4,10 +4,8 @@ public class AccountantBeans {
 	private int id;
 	private String name,password,contact;
 	
-	public AccountantBeans(String name,String password,String contact){
-		this.name=name;
-		this.password=password;
-		this.contact=contact;
+	public AccountantBeans(){
+		
 	}
 	
 	public AccountantBeans(int id,String name,String password,String contact){
