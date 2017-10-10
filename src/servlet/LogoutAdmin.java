@@ -16,7 +16,7 @@ public class LogoutAdmin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
 		pw.println("<html><head><title>Admin logout</title></head><body>");
-		request.getRequestDispatcher("navaadmin.html").include(request, response);
+
 		HttpSession session = request.getSession();
 		session.invalidate();
 		request.getRequestDispatcher("index.html").include(request, response);

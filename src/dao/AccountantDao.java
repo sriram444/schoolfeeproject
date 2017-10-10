@@ -95,5 +95,18 @@ public class AccountantDao {
 		return status;
 	}
 	
+	public static boolean validate(String name,String password){
+			boolean status=false;
+		try{
+			Connection con = DB.getCon();
+			PreparedStatement ps = con.prepareStatement("select * from accountant where name=? and password=?");
+			ps.setString(1, name);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			status = rs.next();
+		}catch(Exception e){System.out.println(e);}
+		return status;
+	}
+	
 	
 }
