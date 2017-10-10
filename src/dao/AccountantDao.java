@@ -46,16 +46,54 @@ public class AccountantDao {
 	}
 	
 	public static int delete(int id){
-	int status=0;
-	try{
-		Connection con = DB.getCon();
-		PreparedStatement ps = con.prepareStatement("delete from accountant where id=?");
-		ps.setInt(4, id);
-		status = ps.executeUpdate();
-		con.close();
-	}catch(Exception e){
-		System.out.println(e);
+		int status = 0;
+		try{
+			Connection con = DB.getCon();
+			PreparedStatement ps = con.prepareStatement("delete from accountant where id=?");
+			ps.setInt(1, id);
+			status = ps.executeUpdate();
+			}catch(Exception e){
+			System.out.println(e);
+		}
+		return status;
 	}
-	return status;
+	
+	public static AccountantBeans getRecordsById(int id){
+		AccountantBeans bean = new AccountantBeans();
+		try{
+			Connection con = DB.getCon();
+			PreparedStatement ps = con.prepareStatement("select * from accountant where id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				bean.setId(rs.getInt(4));
+				bean.setName(rs.getString(1));
+				bean.setContact(rs.getString(3));
+				bean.setPassword(rs.getString(2));
+			}
+			con.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return bean;
 	}
+	
+	public static int update(AccountantBeans beans){
+		int status = 0;
+		try{
+			Connection con = DB.getCon();
+			PreparedStatement ps = con.prepareStatement("update accountant set name=?,password=?,contact=? where id=?");
+			ps.setString(1, beans.getName());
+			ps.setString(2, beans.getPassword());
+			ps.setString(3, beans.getContact());
+			ps.setInt(4, beans.getId());
+			status = ps.executeUpdate();
+			con.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return status;
+	}
+	
+	
 }

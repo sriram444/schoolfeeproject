@@ -10,10 +10,11 @@ import dao.AccountantDao;
 @WebServlet("/DeleteAccountant")
 public class DeleteAccountant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sid=request.getParameter("id");
-		int id=Integer.parseInt(sid);
-				AccountantDao.delete(id);
+		String sid = request.getParameter("id");
+		int id1 = Integer.parseInt(sid);
+		AccountantDao.delete(id1);
 		response.sendRedirect("ViewAccountant");
 	}
 

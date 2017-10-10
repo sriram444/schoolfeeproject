@@ -27,7 +27,7 @@ public class ViewAccountant extends HttpServlet {
 		pw.println("<table>");
 		pw.print("<tr><th>Id</th><th>Name</th><th>Password</th><th>contact</th><th>Edit</th><th>Delete</th>");
 		for(AccountantBeans l:list){
-			pw.println("<tr><td>"+l.getId()+"</td><td>"+l.getName()+"</td><td>"+l.getPassword()+"</td><td>"+l.getContact()+"</td><td><a href='EditAccountForm?id="+l.getId()+"'>Edit</a></td><td><a href='DeleteAccountant?id="+l.getId()+"'>Delete</a></td>");
+			pw.println("<tr><td>"+l.getId()+"</td><td>"+l.getName()+"</td><td>"+l.getPassword()+"</td><td>"+l.getContact()+"</td><td><a href='EditAccountantForm?id="+l.getId()+"'>Edit</a></td><td><a href='DeleteAccountant?id="+l.getId()+"'>Delete</a></td>");
 		}
 		pw.println("</table>");
 		pw.println("</body>");
