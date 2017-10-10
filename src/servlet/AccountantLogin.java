@@ -21,8 +21,11 @@ public class AccountantLogin extends HttpServlet {
 		if(status){
 			request.getRequestDispatcher("navaccountant.html").include(request, response);
 			pw.print("<h1>welcome "+name+"</h1>");
+			
 		}else{
+			
 			request.getRequestDispatcher("index.html").include(request, response);
+			
 		}
 		pw.println("</body></html>");
 		
