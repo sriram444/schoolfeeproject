@@ -3,6 +3,9 @@ package beans;
 public class StudentBeans {
 	private String rollno,name,course;
 	private int fee,paid,due;
+	public StudentBeans(){
+		
+	}
 	public StudentBeans(String rollno,String name,String course,int fee,int paid,int due){
 		this.rollno=rollno;
 		this.name=name;
