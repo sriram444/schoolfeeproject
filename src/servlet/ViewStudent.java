@@ -22,7 +22,7 @@ public class ViewStudent extends HttpServlet {
 		pw.println("<h1>View Students</h1>");
 		pw.println("<tr><th>roll no</th><th>Name</th><th>Course</th><th>Fee</th><th>Paid</th><th>Due</th><th>Edit</th><th>delete</th></tr><br>");
 		for(StudentBeans l:beans){
-			pw.println("<tr><td>"+l.getRollno()+"</td><td>"+l.getName()+"</td><td>"+l.getCourse()+"</td><td>"+l.getFee()+"</td><td>"+l.getPaid()+"</td><td>"+l.getDue()+"</td><td><a href='EditStudentForm?rollno="+l.getRollno()+"'>Edit</a></td><td><a href='DeleteStudent?rollno="+l.getRollno()+"'>delete</a></td></tr><br>");
+			pw.println("<tr><td>"+l.getRollno()+"</td><td>"+l.getName()+"</td><td>"+l.getCourse()+"</td><td>"+l.getFee()+"</td><td>"+l.getPaid()+"</td><td>"+l.getDue()+"</td><td><a href='EditStuentForm?rollno="+l.getRollno()+"'>Edit</a></td><td><a href='DeleteStudent?rollno="+l.getRollno()+"'>delete</a></td></tr><br>");
 		}
 		pw.println("</table></body></html>");
 	}
